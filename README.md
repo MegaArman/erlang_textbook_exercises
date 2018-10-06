@@ -1,2 +1,2 @@
-# programming_erlang_code
-My code solutions for the programming erlang textbook exercises
+# erlang_textbook_exercises
+My code solutions for the Programming Erlang (2nd Edition) textbook exercises
