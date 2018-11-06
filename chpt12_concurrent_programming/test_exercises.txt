@@ -1,0 +1,10 @@
+2> Hi = fun() -> hi! end.
+* 1: syntax error before: 'end'
+2> Hi = fun() -> hiii end.
+#Fun<erl_eval.20.99386804>
+3> exercises:start(greet, Hi).
+true
+
+
+
+

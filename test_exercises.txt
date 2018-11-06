@@ -1,0 +1,16 @@
+Ex 1
+3> Hi = fun() -> io:fwrite("Hi") end.                                                                                                                                                                                                                                                     
+#Fun<erl_eval.20.99386804>                                                                                                                                                                                                                                                                
+4> Hi().                                                                                                                                                                                                                                                                                  
+Hiok                                                                                                                                                                                                                                                                                      
+5> spawn(Hi).                                                                                                                                                                                                                                                                             
+Hi<0.71.0>                                                                                                                                                                                                                                                                                
+6> exercises:start(greet, Hi).                                                                                                                                                                                                                                                            
+Hitrue   
+
+Ex 2
+7> processes:max(20000).
+Maximum # allowed proccesses:262144
+Process spawn time = 5.4 (4.0) microseconds
+ok
+
