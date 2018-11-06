@@ -1,11 +1,11 @@
 -module(exercises).
 -export([start/2, ring/2]).
 
-% ex 1
+% ex1-------------------------------------
 start(AnAtom, Fun) ->
   register(AnAtom, spawn(Fun)).
 
-% ex3 
+% ex3-------------------------------------- 
 % to acheive a ring, we need processes to send messages like so (supposing 3 processes):  A->B->C->A ...
 % for that to work we must have a means for A to give B reference to C 
 for(N, N, F) -> [F()];
@@ -42,7 +42,7 @@ wait() ->
       wait()
     end.
 
-% starting the cycle
+%1 starting the cycle
 start_cycle(PIDs, [H|T], M) ->
   H ! {self(), PIDs, T, 1, M}.
 
