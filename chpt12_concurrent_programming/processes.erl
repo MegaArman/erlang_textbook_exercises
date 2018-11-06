@@ -16,6 +16,8 @@ max(N) ->
   {_, Time1} = statistics(runtime),
   {_, Time2} = statistics(wall_clock),
   lists:foreach(fun(Pid) -> Pid ! die end, L),
+
+  % AVERAGE 
   U1 = Time1 * 1000 / N,
   U2 = Time2 * 1000 / N,
   io:format("Process spawn time = ~p (~p) microseconds ~n", [U1, U2]).
