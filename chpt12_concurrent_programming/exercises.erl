@@ -43,7 +43,7 @@ wait() ->
     end.
 
 % starting the cycle
-cycle(PIDs, [H|T], M) ->
+start_cycle(PIDs, [H|T], M) ->
   H ! {self(), PIDs, T, 1, M}.
 
 ring(N, M) ->
@@ -54,4 +54,4 @@ ring(N, M) ->
 
   % spawn N processes and store their pids in a list
   PIDs = for(1, N, fun() -> spawn(fun() -> wait() end) end), 
-  cycle(PIDs,PIDs, M). 
+  start_cycle(PIDs,PIDs, M). 
