@@ -1,0 +1,48 @@
+#1, #2, and #3
+> exercises:test_my_spawn().
+spawned f: I (<0.77.0>) exit after 5 seconds 
+spawned f: I (<0.79.0>) exit after 5 seconds 
+<0.80.0>
+time is up for <0.79.0> 
+didn't killmyself woohoo 
+<0.77.0> diedwith:"normal behavior". It lived for 1000 (5002000) microseconds
+
+#4
+1> c(exercises).
+{ok,exercises}
+2> exercises:test_keep_alive().
+I'm (<0.67.0>) still running 
+will restart due to: "to see if it is restarted"true
+I'm (<0.69.0>) still running 
+I'm (<0.69.0>) still running 
+
+#5 
+3> exercises:test_keep_multiple_alive().
+<0.68.0>
+I'm (<0.69.0>) still running 
+I'm (<0.71.0>) still running 
+I'm (<0.69.0>) still running 
+I'm (<0.71.0>) still running 
+4> exit(<0.69.0>, because). 
+will restart due to: becausetrue
+I'm (<0.71.0>) still running 
+I'm (<0.70.0>) still running 
+I'm (<0.71.0>) still running 
+
+#6
+2> exercises:test_keep_link_set_alive().
+the pid of the spawner process is <0.67.0> 
+<0.70.0>
+I'm (<0.68.0>) still running 
+I'm (<0.69.0>) still running 
+I'm (<0.68.0>) still running 
+I'm (<0.69.0>) still running 
+I'm (<0.68.0>) still running 
+I'm (<0.69.0>) still running 
+3> exit(<0.68.0>, death).
+will restart due to: deathtrue
+I'm (<0.74.0>) still running 
+I'm (<0.75.0>) still running 
+
+The pids for the children changed from 68 and 69 to 74 and 75 respectively
+because if one link dies all links die.
