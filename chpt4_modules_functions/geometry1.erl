@@ -1,3 +1,4 @@
+% testing geometry.erl
 -module(geometry1).
 -export([test/0, area/1]). 
 
