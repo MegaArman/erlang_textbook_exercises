@@ -21,7 +21,7 @@ most_exported_funs() ->
   IndexOfMax(ModNames, 0, 1, nothing).
   %io:fwrite("~w ~n",  AmountsExported).
   
-most_common_function_name() ->
-   All = code:all_loaded(),
-   ModNames = lists:map(fun(Tuple) -> element(1, Tuple) end, All),
-   lists:mapelement(2, nth(2,apply(ModName, module_info, [])))
+%most_common_function_name() ->
+%   All = code:all_loaded(),
+%   ModNames = lists:map(fun(Tuple) -> element(1, Tuple) end, All),
+%   lists:mapelement(2, nth(2,apply(ModName, module_info, [])))

@@ -23,7 +23,7 @@ map_search_pred([], _, _) ->
 % if a hash is a (proper) subset of another..we shall do this in erlang!
 isProperSubset(M1, M2) -> 
   Pred = fun(Key) -> 
-    maps:is_key(Key, M2) andalso (maps:get(Key, M1) == maps:get(Key, M2))
+    maps:is_key(Key, M2) andalso (maps:get(Key, M1) =:= maps:get(Key, M2))
     end,
   Both = lists:filter(Pred, maps:keys(M1)), % keys which exist and have same vals in both
-  (maps:keys(M1) ==  Both) and (M1 < M2).
+  (maps:keys(M1) =:=  Both) and (M1 < M2).
